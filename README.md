@@ -2,13 +2,13 @@
 
 ## Generate
 
-The following command generates the latest version of `denow`.
+The following command generates the latest version of `denow` in current directory.
 
 ```
 curl -fsSL https://raw.githubusercontent.com/chibat/deno-wrapper/master/generate.sh | sh
 ```
 
-The following command generates the specified version of `denow`.
+The following command generates the specified version of `denow` in current directory.
 
 ```
 curl -fsSL https://raw.githubusercontent.com/chibat/deno-wrapper/master/generate.sh | sh -s v1.4.1
