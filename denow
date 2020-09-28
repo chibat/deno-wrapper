@@ -1,0 +1,17 @@
+#!/bin/sh
+
+VERSION=v1.4.1
+
+DENOW_INSTALL=~/.denow
+DENO=$DENOW_INSTALL/bin/deno-$VERSION
+
+set -e
+
+if [ ! -e $DENO ]
+then
+  curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=$DENOW_INSTALL sh -s $VERSION
+  mv $DENOW_INSTALL/bin/deno $DENO
+fi
+
+$DENO $@
+
