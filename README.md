@@ -3,13 +3,13 @@
 ## Generate the latest version
 
 ```
-generate.sh
+curl -fsSL https://raw.githubusercontent.com/chibat/deno-wrapper/master/generate.sh | sh
 ```
 
 ## Generate the specified version
 
 ```
-generate.sh v1.4.2
+curl -fsSL https://raw.githubusercontent.com/chibat/deno-wrapper/master/generate.sh | sh -s v1.4.1
 ```
 
 ## Usage
