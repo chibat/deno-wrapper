@@ -17,14 +17,14 @@
 Find your existing Deno project, then run:
 
 ```sh
-deno run -A https://deno.land/x/denow
+deno run -A https://deno.land/x/denow/index.ts
 ```
 
 You can add a `vN.N.N` argument to download a specific version. By default we
 use the `Deno.version.deno` version.
 
 ```sh
-deno run -A https://deno.land/x/denow vN.N.N
+deno run -A https://deno.land/x/denow/index.ts vN.N.N
 ```
 
 This CLI will create the wrapper scripts as `./denow` for POSIX and
