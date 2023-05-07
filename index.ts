@@ -17,3 +17,5 @@ const version = Deno.args[2] || "v" + Deno.version.deno;
   text = text.replaceAll("${templateOption:version}", version);
   await writeFile("denow.bat", text);
 }
+
+// TODO: Add .deno to .gitignore if not already in .gitignore
