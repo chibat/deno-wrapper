@@ -4,6 +4,7 @@
 
 <div align="center">
 
+<!-- TODO: Replace picture with something better -->
 ![](https://picsum.photos/600/400)
 
 </div>
