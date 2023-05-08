@@ -5,6 +5,7 @@
 <div align="center">
 
 <!-- TODO: Replace picture with something better -->
+
 ![](https://picsum.photos/600/400)
 
 </div>
@@ -18,14 +19,14 @@
 Find your existing Deno project, then run:
 
 ```sh
-deno run -A https://deno.land/x/denow/index.ts
+deno run -A https://deno.land/x/deno-wrapper/index.ts
 ```
 
 You can add a `vN.N.N` argument to download a specific version. By default we
 use the `Deno.version.deno` version.
 
 ```sh
-deno run -A https://deno.land/x/denow/index.ts vN.N.N
+deno run -A https://deno.land/x/deno-wrapper/index.ts vN.N.N
 ```
 
 This CLI will create the wrapper scripts as `./denow` for POSIX and
@@ -48,7 +49,8 @@ Just use `./denow` as though it were the true `deno` binary!
 If you want to update the version of Deno that `./denow` downloads and invokes,
 you can go through the install steps (above) again to pin to a different
 version. Be aware that this will overwrite the `./denow` and `./denow.bat`
-files.
+files. You can also inspect the generated `./deno` and `./deno.bat` files to see
+what version of Deno they are invoking and change it manually.
 
 ## FAQ
 
