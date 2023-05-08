@@ -7,8 +7,7 @@ Deno.test("deno-wrapper", async (t) => {
     Deno.chdir(tempFolder);
 
     await t.step("deno run -A src/index.ts v1.30.0", async () => {
-      const indexTSPath = import.meta.resolve("../src/index.ts");
-      await $`deno run -A ${indexTSPath} v1.30.0`;
+      await $`deno run -A ${import.meta.resolve("./src/index.ts")} v1.30.0`;
     });
     await new Promise((resolve) => setTimeout(resolve, 500));
 
