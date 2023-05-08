@@ -1,0 +1,36 @@
+name: Test
+on:
+  push:
+    branches: [main]
+    paths:
+      - src/**
+      - test/**
+      - .github/workflows/test.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - src/**
+      - test/**
+      - .github/workflows/test.yml
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+      - run: deno test -A
+  test-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+      - run: deno test -A
+  test-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+      - run: deno test -A
