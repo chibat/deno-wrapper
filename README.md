@@ -16,6 +16,8 @@
 
 ## Installation
 
+![Deno](https://img.shields.io/static/v1?style=for-the-badge&message=Deno&color=000000&logo=Deno&logoColor=FFFFFF&label=)
+
 Find your existing Deno project, then run:
 
 ```sh
@@ -33,6 +35,11 @@ This CLI will create the wrapper scripts as `./denow` for POSIX and
 `./denow.bat` for Windows.
 
 ## Usage
+
+![Terminal](https://img.shields.io/static/v1?style=for-the-badge&message=Terminal&color=4D4D4D&logo=Windows+Terminal&logoColor=FFFFFF&label=)
+![Windows](https://img.shields.io/static/v1?style=for-the-badge&message=Windows&color=0078D6&logo=Windows&logoColor=FFFFFF&label=)
+![Linux](https://img.shields.io/static/v1?style=for-the-badge&message=Linux&color=222222&logo=Linux&logoColor=FCC624&label=)
+![macOS](https://img.shields.io/static/v1?style=for-the-badge&message=macOS&color=000000&logo=macOS&logoColor=FFFFFF&label=)
 
 Just use `./denow` as though it were the true `deno` binary!
 
@@ -74,6 +81,18 @@ For instance, GitHub Actions can be written using Deno, but how do you make sure
 
 Because the Deno binary is >100MB, which is more than most version control
 systems want to deal with. [GitHub will even block files larger than 100MB]!
+
+## Development
+
+![TypeScript](https://img.shields.io/static/v1?style=for-the-badge&message=TypeScript&color=3178C6&logo=TypeScript&logoColor=FFFFFF&label=)
+![sh](https://img.shields.io/static/v1?style=for-the-badge&message=sh&color=4EAA25&logo=GNU+Bash&logoColor=FFFFFF&label=)
+![bat](https://img.shields.io/static/v1?style=for-the-badge&message=bat&color=5391FE&logo=PowerShell&logoColor=FFFFFF&label=)
+
+You can test the script locally using `deno test -A`. This will run the E2E test
+script in `test/e2e-sh.test.ts`. **TODO:** Create a Windows-specific E2E test
+script. Right now there's only a `sh`-based test script. This works on Linux and
+macOS, but not Windows. Then, when you open a PR, we will run a GitHub Action
+that tests the E2E script on Windows, Linux, and macOS.
 
 <!-- prettier-ignore-start -->
 [Deno]: https://deno.com/runtime
