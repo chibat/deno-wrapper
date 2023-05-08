@@ -10,6 +10,7 @@ Deno.test("deno-wrapper", async (t) => {
       const indexTSPath = import.meta.resolve("../src/index.ts");
       await $`deno run -A ${indexTSPath} v1.30.0`;
     });
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     await t.step("file ./denow and ./denow.bat exist", async () => {
       console.log("./denow");
@@ -18,12 +19,28 @@ Deno.test("deno-wrapper", async (t) => {
       console.log("./denow.bat");
       console.log(await Deno.readTextFile("./denow.bat"));
     });
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-    await t.step("./denow eval 'console.log(Deno.version.deno)'", async () => {
-      const output =
-        await $`./denow eval 'console.log(Deno.version.deno)'`.text();
-      expect(output).toEqual("1.30.0");
-    });
+    if (Deno.build.os === "windows") {
+      await t.step(
+        "./denow.bat eval 'console.log(Deno.version.deno)'",
+        async () => {
+          const output =
+            await $`./denow.bat eval 'console.log(Deno.version.deno)'`.text();
+          expect(output).toEqual("1.30.0");
+        }
+      );
+    } else {
+      await t.step(
+        "./denow eval 'console.log(Deno.version.deno)'",
+        async () => {
+          const output =
+            await $`./denow eval 'console.log(Deno.version.deno)'`.text();
+          expect(output).toEqual("1.30.0");
+        }
+      );
+    }
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     await t.step("folder .deno exists", async () => {
       const items = [];
