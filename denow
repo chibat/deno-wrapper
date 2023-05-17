@@ -22,4 +22,8 @@ if [ ! -d .deno ]; then
     curl -fsSL https://deno.land/x/install/install.sh | chronic sh -s "v{{version}}"
 fi
 
+# https://github.com/denoland/deno_install/blob/master/install.sh#L53
+export DENO_INSTALL=.deno
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 exec .deno/bin/deno "$@"
