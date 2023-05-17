@@ -1,5 +1,11 @@
 # Deno Wrapper
 
+**This repository has been archived.As an alternative, please refer to the following excellent repository.**
+
+[jcbhmr/deno-wrapper](https://github.com/jcbhmr/deno-wrapper)
+
+----
+
 ## Generate
 
 The following command generates the latest version of `denow` in current directory.
