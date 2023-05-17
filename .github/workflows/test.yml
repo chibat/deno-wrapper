@@ -5,12 +5,16 @@ on:
     paths:
       - "*.ts"
       - "*.test.ts"
+      - denow
+      - denow.bat
       - .github/workflows/test.yml
   pull_request:
     branches: [main]
     paths:
       - "*.ts"
       - "*.test.ts"
+      - denow
+      - denow.bat
       - .github/workflows/test.yml
 concurrency:
   group: test-${{ github.ref }}
